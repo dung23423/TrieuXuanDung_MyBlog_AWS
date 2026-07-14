@@ -1,12 +1,9 @@
-name: Deploy SmartDorm Internship Report to GitHub Pages
+name: Deploy Hugo Site to GitHub Pages
 
 on:
   push:
     branches:
       - main
-      - thanh
-      - tri
-      - dung
 
 permissions:
   contents: write
@@ -16,23 +13,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout SmartDorm Repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          submodules: recursive # Fetch submodules if any exist
+          fetch-depth: 0
 
       - name: Setup Hugo Environment
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.134.3"
+          hugo-version: "0.134.3" # Matches the version in original template
           extended: true
 
-      - name: Build SmartDorm Hugo Site
-        run: hugo --minify
-        working-directory: ./FCAJ-workshop-template
+      - name: Build Hugo Site
+        run: hugo --minify --baseURL "https://dung23423.github.io/TrieuXuanDung_Blog_AWS/"
 
-      - name: Deploy SmartDorm Report to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./FCAJ-workshop-template/public
-          publish_branch: thanh # Tên nhánh chứa trang web tĩnh đã biên dịch
+          publish_dir: ./public
+          publish_branch: gh-pages
           force_orphan: true
