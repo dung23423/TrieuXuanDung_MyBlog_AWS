@@ -17,7 +17,7 @@ Maintaining dedicated cloud servers (like EC2/VPS) 24/7 for student housing soft
 
 The diagram below illustrates the network layout and data lifecycle:
 
-![kientruc](/image/_index/kientruc.png)
+![kientruc](../../images/5-Workshop/5.1-Workshop-overview/diagram1.png)
 
 ### 3. Service Interactions
 

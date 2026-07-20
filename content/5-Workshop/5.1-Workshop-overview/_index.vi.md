@@ -17,7 +17,7 @@ Dự án **SmartDorm** giải quyết triệt để bài toán này bằng cách
 
 Dưới đây là sơ đồ luồng dữ liệu và thiết kế phân vùng mạng an toàn của hệ thống:
 
-![kientruc](/image/_index.vi/kientruc.png)
+![kientruc](../../images/5-Workshop/5.1-Workshop-overview/diagram1.png)
 
 ### 3. Nguyên lý hoạt động của các dịch vụ sử dụng:
 
