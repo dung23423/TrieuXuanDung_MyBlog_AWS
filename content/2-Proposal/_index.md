@@ -6,34 +6,33 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-## SmartDorm — A Proposal for a Dormitory Management System
+## Project Proposal: SmartDorm - Smart Dormitory Management System
 
-### Background & motivation
-While exploring the problem space, I noticed that dormitory and rental room management in many places still relies on paper records or scattered spreadsheets: utility readings recorded by hand, contracts kept as printouts, payment reminders sent through personal messages. This approach loses data easily, wastes time reconciling numbers, and doesn't scale as the number of rooms grows. That's why I proposed **SmartDorm**, focused on solving this with a solid Backend running on AWS, while I only contributed basic support on the UI side alongside a teammate.
+### 1. Project Overview
+SmartDorm is a comprehensive digitization solution for managing dormitories and large student housing units, breaking administrative barriers between landlords/admins and student tenants.
 
-### My scope in the project
-*   Designing and building the entire **Backend API** with ASP.NET Core: room management, rental applications, contracts, and utility billing.
-*   Designing the relational database schema in PostgreSQL and deploying it to Amazon RDS.
-*   Writing the infrastructure as code with Terraform and deploying the Backend in a serverless setup on AWS Lambda.
-*   Providing basic support on the frontend side: API documentation, sample request snippets, and joint testing of business flows once the UI was ready.
+### 2. Objectives
+*   **Process Digitization:** Transition from paper-based contracts and manual billing to automated online workflows.
+*   **Utility & Monitoring Efficiency:** Visualize monthly electricity/water logs, reducing data discrepancies.
+*   **Infrastructure Cost Optimization:** Attain near-zero hosting costs (~$0/month during staging phase).
 
-### Problems to solve
-*   Manual utility meter readings are error-prone and hard to reconcile at month-end.
-*   No centralized place to store tenant records and rental contracts.
-*   Keeping a server running 24/7 to serve just a few dozen requests a day is an unnecessary cost.
+### 3. Problem Statement
+*   Time-consuming manual record keeping and human error in recording utility indexes.
+*   Delays in payments and student notification delivery.
+*   Expensive idle costs of traditional virtual servers (EC2/VPS) running 24/7.
 
-### Technical approach (AWS)
-I chose a serverless architecture to keep operating costs minimal during the pilot phase:
-*   **AWS Lambda** runs the ASP.NET Core Backend, billed only for actual invocations rather than a fixed server-hour cost.
-*   **Amazon API Gateway (HTTP API)** serves as the entry point for all client requests.
-*   **Amazon RDS PostgreSQL** stores relational data, using a cost-optimized instance eligible for the Free Tier.
-*   **Amazon S3** stores user-uploaded avatar and ID card images, and also hosts the static assets for the demo UI.
+### 4. Solution Architecture (AWS Cloud)
+The system leverages cost-efficient AWS services:
+*   **API Gateway (HTTP API):** Low-cost, fast API routing proxy.
+*   **AWS Lambda:** Serverless business logic execution (C# .NET Core), billed per millisecond.
+*   **Amazon S3:** Static asset storage for frontend and uploaded user profiles/IDs.
+*   **Amazon RDS (PostgreSQL):** Managed relational database instance running on Graviton2 processor for optimized price-to-performance.
 
-### Implementation plan — 3 phases
-*   **Phase 1 (Weeks 1-4):** Review AWS fundamentals, design the ERD, scaffold the Backend, and connect to a local database.
-*   **Phase 2 (Weeks 5-9):** Build out the core business APIs (rooms, applications, contracts, invoices), add JWT authentication, and work with the teammate on the UI to get a basic demo running.
-*   **Phase 3 (Weeks 10-12):** Write the Terraform infrastructure, deploy the Backend to a real serverless environment, migrate file storage to S3, and finalize handoff documentation.
+### 5. Project Timeline (12 Weeks)
+*   **Weeks 1-4:** DB design, core room management, and booking APIs implementation.
+*   **Weeks 5-8:** Utility indexing algorithms, billing systems, Next.js UI integration, and local testing.
+*   **Weeks 9-12:** Terraform IaC scripting, deploying AWS RDS, Lambda Serverless, S3 integration, and Vercel hosting.
 
-### Anticipated risks
-*   **Lambda can't write to local disk:** since its filesystem is read-only, I planned from the start to move file storage to S3 rather than local disk.
-*   **CORS errors between frontend and backend on different domains:** configured CORS policy clearly at both the application layer and API Gateway to avoid issues mid-project.
+### 6. Risks & Mitigation
+*   *Lambda Filesystem Constraints:* Resolved by integrating Amazon S3 for direct file uploads.
+*   *CORS Policies:* Configured precise API Gateway CORS headers to secure endpoints while enabling Vercel client operations.

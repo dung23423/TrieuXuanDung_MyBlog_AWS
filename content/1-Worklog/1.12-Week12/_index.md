@@ -23,5 +23,4 @@ chapter: false
 *   The entire core SmartDorm business flow runs smoothly on the real deployed environment.
 *   A complete set of API documentation is ready, making it easy to hand off or extend the project later.
 
-### Looking back on 12 weeks
-After 12 weeks, I feel much more confident designing and building a complete Backend with ASP.NET Core, managing AWS infrastructure with Terraform, and running an application in a serverless setup. My involvement on the frontend side was limited to basic support, but it also gave me a clearer understanding of how Backend and Frontend need to coordinate on data formats and authentication.
+

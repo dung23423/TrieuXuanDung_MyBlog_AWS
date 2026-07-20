@@ -17,7 +17,7 @@ Dự án **SmartDorm** giải quyết triệt để bài toán này bằng cách
 
 Dưới đây là sơ đồ luồng dữ liệu và thiết kế phân vùng mạng an toàn của hệ thống:
 
-![1783657347600](image/_index/1783657347600.png)
+![kientruc](/image/_index.vi/kientruc.png)
 
 ### 3. Nguyên lý hoạt động của các dịch vụ sử dụng:
 
@@ -30,3 +30,6 @@ Dưới đây là sơ đồ luồng dữ liệu và thiết kế phân vùng m�
 * **Amazon Location Service**: Cung cấp các dịch vụ bản đồ, định vị và địa lý.
 * **Amazon Bedrock AgentCore Runtime Build Pipeline (AWS CDK, S3, CodeBuild, ECR)**: Quy trình tự động hóa CI/CD giúp đóng gói và triển khai mã nguồn của Agent lên môi trường AWS.
 * **Security & Monitoring (AWS KMS & CloudWatch)**: Mã hóa khóa bảo mật và giám sát, ghi nhận nhật ký (logs) hoạt động của toàn bộ hệ thống.
+
+### Link web: [https://smartdorm-orpin.vercel.app/?sig=4db65cb6&id=b55215e8](https://smartdorm-orpin.vercel.app/?sig=4db65cb6&id=b55215e8)
+
