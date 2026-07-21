@@ -136,3 +136,4 @@ Vui lòng nhấp vào các liên kết dưới đây để truy cập chi tiết
 5.  **[5. Workshop Lab chính (Workshop)](5-Workshop/)**
 6.  **[6. Tự đánh giá năng lực (Self-evaluation)](6-Self-evaluation/)**
 7.  **[7. Đóng góp ý kiến (Feedback)](7-Feedback/)**
+8.  **[8. Demo & Links](8-Demo/)**

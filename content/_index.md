@@ -136,3 +136,4 @@ Click the links below to view the detailed work logs and technical labs of the g
 5.  **[5. Technical Lab Workshop](5-Workshop/)**
 6.  **[6. Self-Evaluation Matrix](6-Self-evaluation/)**
 7.  **[7. Program Feedback & Reflection](7-Feedback/)**
+8.  **[8. Demo & Links](8-Demo/)**
